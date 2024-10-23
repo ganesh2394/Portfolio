@@ -65,7 +65,58 @@
     background-color: #e60000; /* Darker red on hover */
 }
 
-/* Popup Styles */
+/* ====== flexible styles media======== */
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #navbar ul {
+        flex-direction: column; /* Stack navbar items */
+        padding: 10px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem; /* Adjust font size */
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem; /* Adjust font size */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack about section */
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 80%; /* Make image responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .certification-card {
+        width: 80%; /* Make cards responsive */
+    }
+
+    .certification-container {
+        flex-direction: column; /* Stack certification cards */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem; /* Further adjust for smaller screens */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem; /* Further adjust for smaller screens */
+    }
+
+    .about-text {
+        font-size: 16px; /* Smaller font for readability */
+    }
+}
+
+
+/* ======= Popup Styles======= */
 .popup {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -410,7 +461,7 @@ h2 {
     top: 0; /* Start from the top */
     width: 4px; /* Width of the line */
     height: 100%; /* Full height */
-    background-color: #26a69a; /* Line color */
+    /* background-color: #26a69a; */
     transform: translateX(-50%); /* Center the line */
     z-index: 0; /* Send behind content */
 }
