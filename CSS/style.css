@@ -373,13 +373,13 @@ h2 {
 
 
  /* =========== Education Section Styles================  */
-
-h2 {
+ h2 {
     text-align: center; /* Center align section title */
     font-size: 2.5rem; /* Font size for the section title */
-    color: #00695c; /* Dark teal color for the section title */
+    color: #004d40; /* Dark teal color for the section title */
     margin-bottom: 40px; /* Margin below the section title */
     text-transform: uppercase; /* Uppercase for section title */
+    letter-spacing: 2px; /* Letter spacing for emphasis */
 }
 
 /* Timeline Styles */
@@ -387,6 +387,7 @@ h2 {
     position: relative; /* Position for absolute positioning of timeline */
     max-width: 900px; /* Maximum width of the timeline */
     margin: 0 auto; /* Center align the timeline */
+    padding: 0 20px; /* Padding around timeline */
 }
 
 .timeline-item {
@@ -394,32 +395,41 @@ h2 {
     margin-bottom: 50px; /* Margin between timeline items */
     position: relative; /* Relative positioning for pseudo-element */
     animation: fadeIn 0.5s ease-in-out; /* Fade-in animation */
+    transition: transform 0.3s ease; /* Smooth transition */
 }
 
+.timeline-item:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+/* Timeline Line */
 .timeline-item::before {
     content: ''; /* Empty content for the line */
     position: absolute; /* Absolute positioning for the line */
     left: 50%; /* Center the line */
     top: 0; /* Start from the top */
-    width: 2px; /* Width of the line */
+    width: 4px; /* Width of the line */
     height: 100%; /* Full height */
-    background-color: #009688; /* Line color */
+    background-color: #26a69a; /* Line color */
     transform: translateX(-50%); /* Center the line */
     z-index: 0; /* Send behind content */
 }
 
+/* Date Styles */
 .timeline-date {
     width: 130px; /* Fixed width for date */
     font-weight: bold; /* Bold font for date */
     color: #fff; /* White color for date */
-    background-color: #009688; /* Teal background for date */
+    background-color: #26a69a; /* Teal background for date */
     padding: 10px; /* Padding inside date */
     border-radius: 5px; /* Rounded corners for date */
     position: relative; /* Relative positioning for shadow */
     z-index: 1; /* Bring date to the front */
     text-align: center; /* Center align date text */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
+/* Content Styles */
 .timeline-content {
     background: #fff; /* White background for content */
     padding: 20px; /* Padding inside content */
@@ -435,23 +445,35 @@ h2 {
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
 }
 
+/* Title Styles */
 .timeline-content h3 {
     font-size: 1.5rem; /* Font size for course titles */
     color: #333; /* Dark color for course titles */
     margin: 10px 0; /* Margin above and below titles */
 }
 
+/* Paragraph Styles */
 .timeline-content p {
     margin: 5px 0; /* Margin above and below paragraphs */
     color: #555; /* Gray color for paragraphs */
 }
 
+/* List Styles */
 .timeline-content ul {
     padding-left: 20px; /* Padding for list items */
 }
 
 .timeline-content li {
     margin-bottom: 5px; /* Margin between list items */
+    position: relative; /* Position for list item */
+}
+
+/* Bullet Styles */
+.timeline-content li::before {
+    content: '•'; /* Custom bullet */
+    color: #26a69a; /* Bullet color */
+    position: absolute; /* Positioning for bullet */
+    left: -15px; /* Bullet position */
 }
 
 /* Animation for Timeline Items */
@@ -472,7 +494,7 @@ h2 {
         width: auto; /* Auto width for date */
         text-align: left; /* Left align date text */
     }
-    
+
     .timeline-item {
         flex-direction: column; /* Stack items vertically */
     }
@@ -482,7 +504,6 @@ h2 {
         margin-left: 0; /* Remove margin on small screens */
     }
 }
-
 
  
  /* ================= Skill General styles============== */
@@ -704,124 +725,6 @@ h2 {
 /* Add spacing between Achievements and Counter */
 .achievements-container + .counter {
     margin-top: 50px; /* Add space between the achievements section and the counter */
-}
-
- /* ============= Contact Section Styles ====== */
-
-h2 {
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-    color: #333;
-}
-
-.form-group {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border 0.3s;
-}
-
-input:focus, textarea:focus {
-    border-color: #ff6347;
-    outline: none;
-}
-
-label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: #999;
-    transition: 0.2s;
-    pointer-events: none;
-}
-
-input:focus + label,
-input:not(:placeholder-shown) + label,
-textarea:focus + label,
-textarea:not(:placeholder-shown) + label {
-    top: -10px;
-    left: 10px;
-    font-size: 12px;
-    color: #ff6347;
-}
-
-textarea {
-    resize: none; /* Prevent resizing */
-}
-
-.btn {
-    padding: 10px 30px;
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background-color: #e5533d;
-}
-
-/* Form Response Styles */
-.form-response {
-    margin-top: 20px;
-    padding: 1rem; /* Add some padding */
-    border-radius: 5px;
-    display: inline-block;
-    animation: fadeIn 0.5s ease-in-out; /* Add a fade-in effect */
-}
-
-/* Success Message Styles */
-.form-response.success {
-    background-color: #d4edda; /* Light green background */
-    color: #155724; /* Dark green text */
-    border: 1px solid #c3e6cb; /* Light green border */
-}
-
-/* Error Message Styles */
-.form-response.error {
-    background-color: #f8d7da; /* Light red background */
-    color: #721c24; /* Dark red text */
-    border: 1px solid #f5c6cb; /* Light red border */
-}
-
-/* Fade-In Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-  
-.form-response {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    opacity: 0; /* Start hidden */
-    transition: opacity 0.5s ease; /* Smooth transition */
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.form-response.success {
-    color: green;
-    background-color: rgba(144, 238, 144, 0.3); /* Light green background */
-}
-
-.form-response.error {
-    color: red;
-    background-color: rgba(255, 99, 71, 0.3); /* Light red background */
 }
 
   /* ========== Footer Styles=========== */
