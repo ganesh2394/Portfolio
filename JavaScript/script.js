@@ -120,3 +120,15 @@ document
       responseDiv.classList.add("show"); // Show error message
     }
   });
+
+document.getElementById("close-button").addEventListener("click", function () {
+  // Show the popup message
+  const popup = document.getElementById("popup");
+  popup.style.display = "block";
+});
+
+// Function to handle the exit button click
+document.getElementById("exit-button").addEventListener("click", function () {
+  // Redirect to your desired URL
+  window.location.href = "https://www.example.com"; // Change this to your desired URL
+});

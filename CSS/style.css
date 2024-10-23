@@ -26,11 +26,6 @@
     z-index: 1000;
   }
   
-  .logo {
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-  }
   
   #navbar ul {
     list-style: none;
@@ -46,14 +41,91 @@
   #navbar ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     transition: color 0.3s;
   }
   
   #navbar ul li a:hover {
     color: #ff6347;
   }
+  
+  .nav-close-button {
 
+    background-color: #ff4d4d; /* Red background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Some padding */
+    margin-left: 20px; /* Space from other links */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.nav-close-button:hover {
+    background-color: #e60000; /* Darker red on hover */
+}
+
+/* Popup Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 100px; /* Location of the box */
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    text-align: center;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.popup-close {
+    margin-top: 10px;
+    background-color: #ff4d4d; /* Red background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Some padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.popup-close:hover {
+    background-color: #e60000; /* Darker red on hover */
+}
+
+  /* ======== logo text start  ========*/
+
+  .logo {
+    position: relative; /* For text shadow or effects */
+}
+
+.logo-text {
+    font-size: 22px; /* Larger font size for impact */
+    font-weight: bold; /* Make the text bold */
+    color: #fff; /* White color for contrast */
+    text-transform: uppercase; /* Uppercase letters */
+    letter-spacing: 2px; /* Space between letters */
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.logo-text:hover {
+    color: #ffcc00; /* Change color on hover */
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Glow effect on hover */
+}
+
+ /* ========= logo section end  ========= */
   .section {
     padding: 50px 20px; /* General padding for the section */
     background-color: #f9f9f9;
@@ -200,64 +272,105 @@
 }
 
 /* ====================== About Section =================== */
+#about {
+    background-color: #f4f4f9;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#about h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
 
 .about-content {
     display: flex;
-    justify-content: space-around; /* Space out text and image */
-    align-items: center; /* Center align items vertically */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    max-width: 1200px; /* Limit the maximum width */
-    margin: 0 auto; /* Center the content */
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Ensures responsiveness */
 }
 
+/* About Text Styling */
 .about-text {
-    flex: 1; /* Allow text to take available space */
-    padding: 20px; /* Padding around text */
-    max-width: 500px; /* Limit the width of the text */
-    animation: fadeIn 1s ease-in-out; /* Animation for text */
+    max-width: 600px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.about-image {
-    flex: 1; /* Allow image to take available space */
-    max-width: 300px; /* Limit the width of the image */
-    margin: 20px; /* Margin around image */
-    border-radius: 10px; /* Rounded corners for the image */
-    overflow: hidden; /* Hide overflow for the rounded corners */
-    animation: slideIn 1s ease-in-out; /* Animation for image */
+.about-text p {
+    margin: 0;
+    font-weight: 300;
 }
 
+/* Image Styling */
 .about-image img {
-    width: 100%; /* Make image responsive */
-    height: auto; /* Maintain aspect ratio */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
+/* Hover effect for the image */
 .about-image img:hover {
-    transform: scale(1.05); /* Slightly enlarge image on hover */
+    transform: scale(1.05);
 }
 
-/* Animation Keyframes */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px); /* Start from below */
+/* Ensure responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0); /* End at original position */
+
+    .about-text {
+        text-align: center;
     }
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px); /* Slide in from the left */
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0); /* End at original position */
-    }
+/* =============== Certifications Section Styles==========  */
+.certification-container {
+    display: flex; /* Arrange cards in a row */
+    flex-wrap: wrap; /* Allow wrapping to next line */
+    justify-content: center; /* Center cards */
+    gap: 20px; /* Space between cards */
+    padding: 20px; /* Padding around the container */
 }
+
+.certification-card {
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Inner padding */
+    text-align: center; /* Center text */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation for hover */
+    width: 250px; /* Fixed width for consistency */
+}
+
+.certification-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.certification-icon {
+    font-size: 40px; /* Icon size */
+    color: #ffcc00; /* Icon color */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+h2 {
+    text-align: center; /* Center the section title */
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 28px; /* Font size for the title */
+    color: #333; /* Dark color for contrast */
+}
+
 
  /* =========== Education Section Styles================  */
 
@@ -711,53 +824,73 @@ textarea {
     background-color: rgba(255, 99, 71, 0.3); /* Light red background */
 }
 
-/* Show the message */
-.show {
-    opacity: 1; /* Make visible */
-}
   /* ========== Footer Styles=========== */
+/* Footer Styles */
 footer {
     background-color: #333; /* Dark background for the footer */
-    color: white; /* White text color */
-    padding: 20px 0; /* Padding for top and bottom */
-    text-align: center; /* Center the text */
-    position: relative; /* Position relative for child positioning */
-    bottom: 0; /* Position at the bottom of the page */
-    width: 100%; /* Full width */
+    color: #fff; /* White text color */
+    padding: 20px 0; /* Padding above and below */
 }
 
 .footer-container {
-    max-width: 1200px; /* Maximum width of the footer content */
-    margin: 0 auto; /* Center the container */
-    padding: 0 20px; /* Padding for left and right */
+    max-width: 1200px; /* Maximum width for the footer */
+    margin: 0 auto; /* Center the footer */
+    padding: 0 20px; /* Padding on the sides */
+    display: flex;
+    justify-content: space-between; /* Space between content and links */
+    align-items: center; /* Vertically center content */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Stack text and social links */
+    align-items: center; /* Center align items */
+}
+
+.footer-content p {
+    margin: 0; /* Remove margin */
 }
 
 .social-links {
-    margin-top: 10px; /* Space above the social links */
+    display: flex;
+    margin-top: 10px; /* Space between text and icons */
 }
 
 .social-icon {
-    color: white; /* White color for social icons */
-    margin: 0 10px; /* Spacing between icons */
-    font-size: 24px; /* Size of the icons */
-    transition: transform 0.3s, color 0.3s; /* Transition for hover effects */
+    color: #fff; /* White color for icons */
+    font-size: 24px; /* Icon size */
+    margin: 0 10px; /* Space between icons */
+    transition: color 0.3s; /* Smooth transition on hover */
 }
 
 .social-icon:hover {
-    transform: scale(1.2); /* Scale up the icon on hover */
-    color: #00aced; /* Change color on hover (Twitter blue as an example) */
+    color: #ffcc00; /* Change color on hover */
 }
 
-.social-icon:nth-child(1):hover { color: #00aced;; } /* GitHub hover color */
-.social-icon:nth-child(2):hover { color: #00aced;; } /* LinkedIn hover color */
-.social-icon:nth-child(3):hover { color: #00aced; } /* Twitter hover color */
+.footer-links {
+    display: flex; /* Horizontal layout for links */
+    margin-top: 20px; /* Space above the links */
+}
 
-@media (max-width: 600px) {
+.footer-links a {
+    color: #fff; /* White color for links */
+    text-decoration: none; /* Remove underline */
+    margin: 0 15px; /* Space between links */
+    transition: color 0.3s; /* Smooth transition on hover */
+}
+
+.footer-links a:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
     .footer-container {
-        padding: 0 10px; /* Reduce padding for smaller screens */
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center align items */
     }
-
-    .social-icon {
-        font-size: 20px; /* Smaller icons on mobile */
+    .footer-links {
+        margin-top: 10px; /* Space above the links */
     }
 }
