@@ -1,0 +1,763 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+
+
+  /* Navbar Styles */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #333;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  #navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    gap: 20px ;
+  }
+  
+  #navbar ul li {
+    margin-left: 20px;
+  }
+  
+  #navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  #navbar ul li a:hover {
+    color: #ff6347;
+  }
+
+  .section {
+    padding: 50px 20px; /* General padding for the section */
+    background-color: #f9f9f9;
+    text-align: center;
+    position: relative; /* To handle overlapping with fixed navbar */
+    scroll-margin-top: 60px; /* Prevent overlapping when jumping to the section */
+}
+  /* ====================== Hero Section =================== */
+.hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    overflow: hidden;
+    background-size: cover; /* Ensures the background image covers the section */
+    animation: scrollBackground 12s infinite; /* Animation for scrolling background */
+}
+
+/* Overlay for darkening the background */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
+    z-index: -1; /* Behind the content */
+}
+
+/* Hero content */
+.hero-content {
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/* Hero title */
+.hero-title {
+    font-size: 3.5rem;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: fadeIn 1.2s ease-in-out forwards; /* Subtle fade-in animation */
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin: 15px 0 30px;
+    font-weight: bold;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+
+
+/* Hero buttons */
+.hero-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #388E3C; /* Darken on hover */
+    transform: translateY(-5px); /* Lift the button slightly on hover */
+}
+
+/* Secondary Contact button style */
+.contact-btn {
+    background-color: #3498db;
+    margin-left: 10px;
+}
+
+.contact-btn:hover {
+    background-color: #2980b9; /* Hover effect for the contact button */
+}
+
+/* Scroll down indicator */
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-down a {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    animation: bounce 2s infinite; /* Bouncing arrow animation */
+}
+
+.scroll-down a:hover {
+    color: #3498db; /* Change color on hover */
+}
+
+/* Scrolling Background Image */
+@keyframes scrollBackground {
+    0% {
+        background-image: url('../images/back_image1.jpg'); /* First image */
+    }
+    33% {
+        background-image: url('../images/back_image2.jpg'); /* Second image */
+    }
+    67% {
+        background-image: url('../images/back_image3.jpg'); /* Third image */
+    }
+    100% {
+        background-image: url('../images/back_image4.jpg'); /* Loop back to first image */
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* ====================== About Section =================== */
+
+.about-content {
+    display: flex;
+    justify-content: space-around; /* Space out text and image */
+    align-items: center; /* Center align items vertically */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    max-width: 1200px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the content */
+}
+
+.about-text {
+    flex: 1; /* Allow text to take available space */
+    padding: 20px; /* Padding around text */
+    max-width: 500px; /* Limit the width of the text */
+    animation: fadeIn 1s ease-in-out; /* Animation for text */
+}
+
+.about-image {
+    flex: 1; /* Allow image to take available space */
+    max-width: 300px; /* Limit the width of the image */
+    margin: 20px; /* Margin around image */
+    border-radius: 10px; /* Rounded corners for the image */
+    overflow: hidden; /* Hide overflow for the rounded corners */
+    animation: slideIn 1s ease-in-out; /* Animation for image */
+}
+
+.about-image img {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.about-image img:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start from below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px); /* Slide in from the left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* End at original position */
+    }
+}
+
+ /* =========== Education Section Styles================  */
+
+h2 {
+    text-align: center; /* Center align section title */
+    font-size: 2.5rem; /* Font size for the section title */
+    color: #00695c; /* Dark teal color for the section title */
+    margin-bottom: 40px; /* Margin below the section title */
+    text-transform: uppercase; /* Uppercase for section title */
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative; /* Position for absolute positioning of timeline */
+    max-width: 900px; /* Maximum width of the timeline */
+    margin: 0 auto; /* Center align the timeline */
+}
+
+.timeline-item {
+    display: flex; /* Flex layout for timeline items */
+    margin-bottom: 50px; /* Margin between timeline items */
+    position: relative; /* Relative positioning for pseudo-element */
+    animation: fadeIn 0.5s ease-in-out; /* Fade-in animation */
+}
+
+.timeline-item::before {
+    content: ''; /* Empty content for the line */
+    position: absolute; /* Absolute positioning for the line */
+    left: 50%; /* Center the line */
+    top: 0; /* Start from the top */
+    width: 2px; /* Width of the line */
+    height: 100%; /* Full height */
+    background-color: #009688; /* Line color */
+    transform: translateX(-50%); /* Center the line */
+    z-index: 0; /* Send behind content */
+}
+
+.timeline-date {
+    width: 130px; /* Fixed width for date */
+    font-weight: bold; /* Bold font for date */
+    color: #fff; /* White color for date */
+    background-color: #009688; /* Teal background for date */
+    padding: 10px; /* Padding inside date */
+    border-radius: 5px; /* Rounded corners for date */
+    position: relative; /* Relative positioning for shadow */
+    z-index: 1; /* Bring date to the front */
+    text-align: center; /* Center align date text */
+}
+
+.timeline-content {
+    background: #fff; /* White background for content */
+    padding: 20px; /* Padding inside content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    width: calc(100% - 150px); /* Adjust width to account for date */
+    margin-left: 20px; /* Margin to create space from date */
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px); /* Lift content on hover */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem; /* Font size for course titles */
+    color: #333; /* Dark color for course titles */
+    margin: 10px 0; /* Margin above and below titles */
+}
+
+.timeline-content p {
+    margin: 5px 0; /* Margin above and below paragraphs */
+    color: #555; /* Gray color for paragraphs */
+}
+
+.timeline-content ul {
+    padding-left: 20px; /* Padding for list items */
+}
+
+.timeline-content li {
+    margin-bottom: 5px; /* Margin between list items */
+}
+
+/* Animation for Timeline Items */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start from transparent */
+        transform: translateY(20px); /* Slide in from bottom */
+    }
+    to {
+        opacity: 1; /* Fade in */
+        transform: translateY(0); /* No translation */
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .timeline-date {
+        width: auto; /* Auto width for date */
+        text-align: left; /* Left align date text */
+    }
+    
+    .timeline-item {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .timeline-content {
+        width: 100%; /* Full width for content */
+        margin-left: 0; /* Remove margin on small screens */
+    }
+}
+
+
+ 
+ /* ================= Skill General styles============== */
+
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.skill-category {
+    width: 30%;
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+h3 i {
+    margin-right: 10px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.skills-list li i {
+    margin-right: 10px;
+    color: #007bff;
+    transition: transform 0.3s ease;
+}
+
+.skills-list li:hover i {
+    transform: rotate(20deg);
+}
+
+.skills-list li[data-skill]:hover::after {
+    content: attr(data-skill);
+    position: absolute;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    top: -25px;
+    right: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.skills-list li[data-skill]::after {
+    opacity: 0;
+}
+
+.skill-category:hover h3 i {
+    color: #007bff;
+}
+ 
+
+/* ================ Projects Section ============== */
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-card {
+    background-color: white;
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.project-card p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.project-card .btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover h3 {
+    color: #0056b3;
+}
+
+.project-card:hover .btn {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* ====================== Achievements==================  */
+.achievements-container {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+    gap: 50px; /* Space between items */
+    margin-bottom: 40px; /* Space below achievements section to avoid overlap */
+}
+
+.achievement-item {
+    background-color: #f0f0f0; /* Light background for the card */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    text-align: center; /* Center text inside cards */
+    width: 250px; /* Fixed width for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.achievement-item:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+/* ====================== Counter =================== */
+.counter {
+    font-size: 2rem; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold */
+    color: #4CAF50; /* Change the color to green (or any color you prefer) */
+    text-align: center; /* Center align the text */
+    margin: 20px 0; /* Margin above and below the counter */
+    transition: color 0.5s; /* Smooth color transition */
+    margin-bottom: 40px; /* Add extra margin below counter to avoid overlap */
+}
+
+/* ====================== Profile Link =================== */
+.profile-link {
+    display: inline-block; /* Make link display as a block */
+    margin-top: 10px; /* Space above the link */
+    color: #3498db; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.2s; /* Smooth transition for hover effect */
+}
+
+.profile-link:hover {
+    color: #2980b9; /* Darker color on hover */
+}
+
+/* Add spacing between Achievements and Counter */
+.achievements-container + .counter {
+    margin-top: 50px; /* Add space between the achievements section and the counter */
+}
+
+ /* ============= Contact Section Styles ====== */
+
+h2 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff6347;
+    outline: none;
+}
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #999;
+    transition: 0.2s;
+    pointer-events: none;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #ff6347;
+}
+
+textarea {
+    resize: none; /* Prevent resizing */
+}
+
+.btn {
+    padding: 10px 30px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #e5533d;
+}
+
+/* Form Response Styles */
+.form-response {
+    margin-top: 20px;
+    padding: 1rem; /* Add some padding */
+    border-radius: 5px;
+    display: inline-block;
+    animation: fadeIn 0.5s ease-in-out; /* Add a fade-in effect */
+}
+
+/* Success Message Styles */
+.form-response.success {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    border: 1px solid #c3e6cb; /* Light green border */
+}
+
+/* Error Message Styles */
+.form-response.error {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    border: 1px solid #f5c6cb; /* Light red border */
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+  
+.form-response {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease; /* Smooth transition */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form-response.success {
+    color: green;
+    background-color: rgba(144, 238, 144, 0.3); /* Light green background */
+}
+
+.form-response.error {
+    color: red;
+    background-color: rgba(255, 99, 71, 0.3); /* Light red background */
+}
+
+/* Show the message */
+.show {
+    opacity: 1; /* Make visible */
+}
+  /* ========== Footer Styles=========== */
+footer {
+    background-color: #333; /* Dark background for the footer */
+    color: white; /* White text color */
+    padding: 20px 0; /* Padding for top and bottom */
+    text-align: center; /* Center the text */
+    position: relative; /* Position relative for child positioning */
+    bottom: 0; /* Position at the bottom of the page */
+    width: 100%; /* Full width */
+}
+
+.footer-container {
+    max-width: 1200px; /* Maximum width of the footer content */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Padding for left and right */
+}
+
+.social-links {
+    margin-top: 10px; /* Space above the social links */
+}
+
+.social-icon {
+    color: white; /* White color for social icons */
+    margin: 0 10px; /* Spacing between icons */
+    font-size: 24px; /* Size of the icons */
+    transition: transform 0.3s, color 0.3s; /* Transition for hover effects */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Scale up the icon on hover */
+    color: #00aced; /* Change color on hover (Twitter blue as an example) */
+}
+
+.social-icon:nth-child(1):hover { color: #00aced;; } /* GitHub hover color */
+.social-icon:nth-child(2):hover { color: #00aced;; } /* LinkedIn hover color */
+.social-icon:nth-child(3):hover { color: #00aced; } /* Twitter hover color */
+
+@media (max-width: 600px) {
+    .footer-container {
+        padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+
+    .social-icon {
+        font-size: 20px; /* Smaller icons on mobile */
+    }
+}
