@@ -104,6 +104,58 @@
 .popup-close:hover {
     background-color: #e60000; /* Darker red on hover */
 }
+/* =============== Style for the dropdown container =========== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for the dropdown button (More Information link) */
+.dropbtn {
+    color: white; /* Text color */
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    background: none; /* Remove any background */
+}
+
+/* Style for the dropdown content */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: rgba(69, 64, 64, 0.425); /* Transparent background */
+    border: 1px solid white; /* White border */
+    min-width: 130px; /* Minimum width for dropdown */
+    z-index: 1; /* Ensure it stays on top */
+    border-radius: 3px; /* Rounded corners */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white; /* Text color for links */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: transparent; /* Remove background from links */
+}
+
+/* Change the background of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: rgba(163, 156, 156, 0.2); /* Slightly more opaque on hover */
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the text color of the button when hovered */
+.dropdown:hover .dropbtn {
+    color: #2980b9; /* Change text color instead of background */
+}
+
 
   /* ======== logo text start  ========*/
 
@@ -175,14 +227,16 @@
     animation: fadeIn 1.2s ease-in-out forwards; /* Subtle fade-in animation */
 }
 
-/* Hero subtitle */
 .hero-subtitle {
-    font-size: 1.5rem;
-    margin: 15px 0 30px;
-    font-weight: bold;
-    animation: fadeIn 1.5s ease-in-out forwards;
+    font-family: Arial, sans-serif; /* Choose a font */
+    font-size: 1.5em; /* Adjust font size */
+    color: #f8f6f6; /* Set text color */
+    line-height: 1.6; /* Adjust line height for better readability */
+    text-align: center; /* Center align the text */
+    margin: 20px 0; /* Add margin above and below the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Optional: add a subtle text shadow */
+    animation: fadeIn 1.2s ease-in-out forwards;
 }
-
 
 
 /* Hero buttons */
@@ -333,44 +387,113 @@
         text-align: center;
     }
 }
-
 /* =============== Certifications Section Styles==========  */
 .certification-container {
-    display: flex; /* Arrange cards in a row */
-    flex-wrap: wrap; /* Allow wrapping to next line */
-    justify-content: center; /* Center cards */
-    gap: 20px; /* Space between cards */
-    padding: 20px; /* Padding around the container */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 40px 20px;
 }
 
 .certification-card {
-    background-color: #f9f9f9; /* Light background color */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px; /* Inner padding */
-    text-align: center; /* Center text */
-    transition: transform 0.3s, box-shadow 0.3s; /* Animation for hover */
-    width: 250px; /* Fixed width for consistency */
+    background: linear-gradient(145deg, #f0f0f0, #ffffff);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    width: 280px;
+    position: relative;
+    overflow: hidden;
+}
+
+.certification-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #ff6347);
+    transition: width 0.4s ease;
+    width: 0;
+}
+
+.certification-card:hover::before {
+    width: 100%;
 }
 
 .certification-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .certification-icon {
-    font-size: 40px; /* Icon size */
-    color: #ffcc00; /* Icon color */
-    margin-bottom: 10px; /* Space between icon and text */
+    font-size: 50px;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.certification-card:hover .certification-icon {
+    transform: rotate(360deg);
+}
+
+h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0;
+    line-height: 1.6;
 }
 
 h2 {
-    text-align: center; /* Center the section title */
-    margin-bottom: 20px; /* Space below the title */
-    font-size: 28px; /* Font size for the title */
-    color: #333; /* Dark color for contrast */
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #1e1e1e;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
 }
 
+h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 1024px) {
+    .certification-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .certification-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .certification-card {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+}
 
  /* =========== Education Section Styles================  */
  h2 {
@@ -590,75 +713,116 @@ h3 i {
 .skill-category:hover h3 i {
     color: #007bff;
 }
- 
-
 /* ================ Projects Section ============== */
 
 h2 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #333;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #1e1e1e;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #007bff;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
 }
 
 .projects-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: 40px;
+    padding: 0 20px;
 }
 
 .project-card {
-    background-color: white;
-    width: 30%;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+    width: 28%;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
     position: relative;
     overflow: hidden;
+    border-top: 4px solid #007bff;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(45deg, #007bff, #ff6347);
+    transition: width 0.4s ease;
+    width: 0;
+}
+
+.project-card:hover::before {
+    width: 100%;
 }
 
 .project-card h3 {
-    font-size: 1.8rem;
-    color: #007bff;
+    font-size: 2rem;
+    color: #1e1e1e;
     margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
     transition: color 0.3s ease;
 }
 
 .project-card p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .project-card .btn {
     display: inline-block;
     background-color: #007bff;
     color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border-radius: 50px;
     text-decoration: none;
     font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
 }
 
 .project-card .btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
+    background-color: #ff6347;
+    box-shadow: 0 8px 25px rgba(255, 99, 71, 0.4);
+    transform: translateY(-4px);
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    background-color: #f4f4f4;
 }
 
 .project-card:hover h3 {
-    color: #0056b3;
+    color: #ff6347;
 }
 
-.project-card:hover .btn {
-    transform: translateY(-5px);
+@media (max-width: 1024px) {
+    .project-card {
+        width: 45%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -668,58 +832,58 @@ h2 {
     }
 
     .project-card {
-        width: 80%;
+        width: 90%;
         margin-bottom: 30px;
     }
 }
-
-
-/* ====================== Achievements==================  */
+/* ====================== Achievements ================== */
 .achievements-container {
     display: flex;
     justify-content: center; /* Center items horizontally */
     flex-wrap: wrap; /* Wrap items on smaller screens */
-    gap: 50px; /* Space between items */
+    gap: 60px; /* Increased space between items */
     margin-bottom: 40px; /* Space below achievements section to avoid overlap */
 }
 
 .achievement-item {
-    background-color: #f0f0f0; /* Light background for the card */
+    background-color: #ffffff; /* White background for contrast */
     border: 1px solid #ddd; /* Light border */
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 12px; /* Slightly more rounded corners */
     padding: 20px; /* Padding inside the card */
     text-align: center; /* Center text inside cards */
-    width: 250px; /* Fixed width for cards */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.2s; /* Smooth transition for hover effect */
+    width: 300px; /* Increased width for cards */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
 }
 
 .achievement-item:hover {
-    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    transform: translateY(-5px); /* Slightly lift the card on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 /* ====================== Counter =================== */
 .counter {
-    font-size: 2rem; /* Adjust the font size */
+    font-size: 2.5rem; /* Increased font size for emphasis */
     font-weight: bold; /* Make the text bold */
-    color: #4CAF50; /* Change the color to green (or any color you prefer) */
+    color: #4CAF50; /* Green color for the counter */
     text-align: center; /* Center align the text */
     margin: 20px 0; /* Margin above and below the counter */
     transition: color 0.5s; /* Smooth color transition */
-    margin-bottom: 40px; /* Add extra margin below counter to avoid overlap */
 }
 
 /* ====================== Profile Link =================== */
 .profile-link {
     display: inline-block; /* Make link display as a block */
-    margin-top: 10px; /* Space above the link */
+    margin-top: 15px; /* Increased space above the link */
     color: #3498db; /* Link color */
     text-decoration: none; /* Remove underline */
-    transition: color 0.2s; /* Smooth transition for hover effect */
+    font-weight: 600; /* Slightly bolder text */
+    transition: color 0.2s, text-shadow 0.2s; /* Smooth transition for hover effect */
 }
 
 .profile-link:hover {
     color: #2980b9; /* Darker color on hover */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a shadow effect on hover */
 }
 
 /* Add spacing between Achievements and Counter */

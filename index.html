@@ -15,7 +15,6 @@
   <div class="logo">
     <span class="logo-text">My Portfolio</span>
 </div>
-
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -25,6 +24,17 @@
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#achievements">Achievements</a></li>
       <li><a href="https://drive.google.com/file/d/109wS4L3pRdrRENEiQq8YKFCTxoui_CtJ/view?usp=sharing" target="_blank">Resume</a></li> <!-- Resume link -->
+       <!-- Dropdown for more information -->
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">More Information</a>
+    <div class="dropdown-content">
+      <a href="#awards">Awards</a>
+      <a href="#publications">Publications</a>
+      <a href="#volunteering">Volunteering</a>
+      <a href="#hobbies">Hobbies</a>
+    </div>
+  </li>
+
       <button id="close-button" class="nav-close-button">Close</button>
     </ul>
     <div class="menu-toggle" id="mobile-menu">
@@ -69,6 +79,8 @@
       </div>
   </div>
 </section>
+
+
 <!-- Education Section -->
 <section id="education" class="section">
   <h2>My Education</h2>
@@ -77,12 +89,12 @@
           <div class="timeline-date">2021 - 2025</div>
           <div class="timeline-content">
               <h3>Bachelor of Engineering in Information Technology</h3>
-              <p>Institute of Engineering and Technology, DAVV, Indore</p>
+              <p><strong>Institute of Engineering and Technology, DAVV, Indore</strong></p>
               <p>Key Courses: Data Structures, Algorithms, Networking, Cybersecurity, Software Engineering</p>
               <p>Achievements:</p>
               <ul>
                   <li>Completed internship at CDAC Noida</li>
-                  <li>Top project: Ransomware Simulator</li>
+                  <li>Project: Blood4U [Blood Donation Management]</li>
               </ul>
           </div>
       </div>
@@ -91,7 +103,7 @@
           <div class="timeline-date">2018 - 2020</div>
           <div class="timeline-content">
               <h3>Higher Secondary Certificate (Science - PCM)</h3>
-              <p>School For Excellence, Dewas</p>
+              <p><strong>School For Excellence, Dewas</strong></p>
               <p>Subjects: Physics, Chemistry, Mathematics</p>
               <p>Achievements:</p>
               <ul>
@@ -104,7 +116,7 @@
           <div class="timeline-date">2016 - 2018</div>
           <div class="timeline-content">
               <h3>Secondary School Certificate</h3>
-              <p>School For Excellence, Dewas</p>
+              <p><strong>School For Excellence, Dewas</strong></p>
               <p>Achievements:</p>
               <ul>
                   <li>Secured 89% in the final board exams</li>
@@ -120,17 +132,16 @@
     <div class="skills-container">
       
         <div class="skill-category">
-            <h3><i class="fas fa-code"></i> Programming Languages</h3>
+            <h3><i class="fas fa-code"></i>Programming Languages</h3>
             <ul class="skills-list">
                 <li data-skill="Core Java"><i class="fab fa-java"></i> Core Java</li>
                 <li data-skill="C++"><i class="fas fa-cplusplus"></i> C++ Programming</li>
                 <li data-skill="C"><i class="fas fa-code"></i> C Programming</li>
-                <li data-skill="JavaScript"><i class="fab fa-js"></i> JavaScript</li>
             </ul>
         </div>
 
         <div class="skill-category">
-            <h3><i class="fas fa-database"></i> Database</h3>
+            <h3><i class="fas fa-database"></i> Databases</h3>
             <ul class="skills-list">
                 <li data-skill="MySQL"><i class="fas fa-database"></i> MySQL</li>
                 <li data-skill="MongoDB"><i class="fas fa-leaf"></i> MongoDB</li>
@@ -154,8 +165,12 @@
                 <li data-skill="DSA"><i class="fas fa-brain"></i> Data Structures and Algorithms</li>
                 <li data-skill="OS"><i class="fas fa-server"></i> Operating System</li>
                 <li data-skill="Software Engineering"><i class="fas fa-project-diagram"></i> Software Engineering</li>
+                <li data-skill="Computer Network"><i class="fas fa-network-wired"></i> Computer Network</li>
+                <li data-skill="Web Technology"><i class="fas fa-code"></i> Web Technology</li>
+                <li data-skill="Cloud Computing"><i class="fas fa-cloud"></i> Cloud Computing</li>
             </ul>
         </div>
+        
 
         <div class="skill-category">
             <h3><i class="fas fa-rocket"></i> Areas of Interest</h3>
@@ -173,6 +188,8 @@
                 <li data-skill="Problem Solving"><i class="fas fa-puzzle-piece"></i> Problem Solving</li>
                 <li data-skill="Teamwork"><i class="fas fa-users"></i> Teamwork</li>
                 <li data-skill="Quick Learning"><i class="fas fa-brain"></i> Quick Learning</li>
+                <li data-skill="Communication"><i class="fas fa-comments"></i> Communication</li>
+                <li data-skill="Adaptability"><i class="fas fa-sync"></i> Adaptability</li>
             </ul>
         </div>
     </div>
@@ -192,51 +209,62 @@
         <p>A platform that connects blood donors with those in need of blood in emergencies.</p>
         <a href="https://github.com/ganesh2394/Blood-Bank-Management-App" target="_blank" class="btn">View on GitHub</a>
       </div>
+      <div class="project-card">
+        <h3>User Authentication & Verification</h3>
+        <p>Implemented user authentication and verification using Android Studio, Firebase, and Java for secure login systems.</p>
+        <a href="https://github.com/ganesh2394/User-Authentication-Verification" target="_blank" class="btn">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Hotel Reservation System (JDBC)</h3>
+        <p>Developed a Hotel Reservation System using Java, JDBC, and MySQL for managing reservations and hotel data efficiently.</p>
+        <a href="https://github.com/ganesh2394/HotalReservationSystem-JDBC-" target="_blank" class="btn">View on GitHub</a>
+      </div>
     </div>
 </section>
+
 
 <!-- Certifications Section -->
 <section id="certifications" class="section">
-  <h2>Certifications</h2>
-  <div class="certification-container">
-      <div class="certification-card">
-          <i class="fas fa-certificate certification-icon"></i>
-          <h3>Salesforce Associate Certified</h3>
-          <p>Recognizes foundational knowledge in Salesforce products and services.</p>
-      </div>
-      <div class="certification-card">
-          <i class="fas fa-certificate certification-icon"></i>
-          <h3>Cisco Networking Essentials</h3>
-          <p>Provides fundamental knowledge in networking concepts and practices.</p>
-      </div>
-      <div class="certification-card">
-          <i class="fas fa-certificate certification-icon"></i>
-          <h3>Cisco Packet Tracer Certificate</h3>
-          <p>Demonstrates proficiency in using Cisco Packet Tracer for network simulations.</p>
-      </div>
-  </div>
-</section>
-
+    <h2>Certifications</h2>
+    <div class="certification-container">
+        <div class="certification-card">
+            <i class="fas fa-certificate certification-icon"></i>
+            <h3>Salesforce Associate Certified</h3>
+            <p>Recognizes foundational knowledge in Salesforce products and services.</p>
+        </div>
+        <div class="certification-card">
+            <i class="fas fa-certificate certification-icon"></i>
+            <h3>Cisco Networking Essentials</h3>
+            <p>Provides fundamental knowledge in networking concepts and practices.</p>
+        </div>
+        <div class="certification-card">
+            <i class="fas fa-certificate certification-icon"></i>
+            <h3>Cisco Packet Tracer Certificate</h3>
+            <p>Demonstrates proficiency in using Cisco Packet Tracer for network simulations.</p>
+        </div>
+    </div>
+  </section>
+  
 
  <!-- Achievements Section -->
 <section id="achievements" class="section">
-  <h2>My Achievements</h2>
-  <div class="achievements-container">
-    <div class="achievement-item">
-      <h3>GeeksforGeeks</h3>
-      <div class="counter" data-count="500">0</div>
-      <p>Problems Solved</p>
-      <a href="https://www.geeksforgeeks.org/user/gp2581739/" target="_blank" class="profile-link">Visit My GFG Profile</a>
-    </div>
-    <div class="achievement-item">
-      <h3>LeetCode</h3>
-      <div class="counter" data-count="300">0</div>
-      <p>Problems Solved</p>
-      <a href="https://leetcode.com/profile/" target="_blank" class="profile-link">Visit My LeetCode Profile</a>
-    </div>
-  </div>
-</section>
-
+    <h2>My Achievements</h2>
+    <div class="achievements-container">
+      <div class="achievement-item">
+        <h3>GeeksforGeeks</h3>
+        <div class="counter" data-count="500">0</div>
+        <p>Problems Solved</p>
+        <a href="https://www.geeksforgeeks.org/user/gp2581739/" target="_blank" class="profile-link">Visit My GFG Profile</a>
+      </div>
+      <div class="achievement-item">
+        <h3>LeetCode</h3>
+        <div class="counter" data-count="300">0</div>
+        <p>Problems Solved</p>
+        <a href="https://leetcode.com/profile/" target="_blank" class="profile-link">Visit My LeetCode Profile</a>
+      </div>
+    
+  </section>
+  
 <!-- Footer -->
 <footer>
   <div class="footer-container">
@@ -249,13 +277,13 @@
               <a href="https://www.linkedin.com/in/ganesh-prasad09/" target="_blank" class="social-icon">
                   <i class="fab fa-linkedin"></i>
               </a>
-              <a href="#" target="_blank" class="social-icon">
+              <a href="https://www.twitter.com" target="_blank" class="social-icon">
                   <i class="fab fa-twitter"></i>
               </a>
-              <a href="#" target="_blank" class="social-icon">
+              <a href="https://www.facebook.com" target="_blank" class="social-icon">
                   <i class="fab fa-facebook"></i>
               </a>
-              <a href="#" target="_blank" class="social-icon">
+              <a href="https://instagram.com" target="_blank" class="social-icon">
                   <i class="fab fa-instagram"></i>
               </a>
           </div>
@@ -263,7 +291,7 @@
       <div class="footer-links">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="#skills">Skills</a>
           <a href="#education">Education</a>
       </div>
   </div>
